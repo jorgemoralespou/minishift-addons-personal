@@ -13,7 +13,12 @@ oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:kube-
 oc deploy dashboard -n kube-dashboard
 #oc rollout latest dc/dashboard -n kube-dashboard
 oc deploy dashboard --follow -n kube-dashboard
+
 echo You have installed #{addon-name}
 echo To access the #{addon-name} go to http://dashboard.#{routing-suffix}
 echo or
-echo Use minishift: minishift openshift service dashboard -n kube-dashboard
+echo Use minishift: 
+echo     minishift openshift service dashboard -n kube-dashboard
+echo 
+echo To delete:
+echo     oc delete project/kube-dashboard --as=system:admin
