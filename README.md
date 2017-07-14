@@ -30,6 +30,23 @@ To access it:
 minishift openshift service openshift-cockpit -n cockpit
 ````
 
+## prometheus
+An addon that will deploy Prometheus. 
+
+NOTE: Requires Origin >= 3.6.0-rc.0
+
+You should provide the namespace where it will be installed with the addon-env namespace, like this:
+
+````
+minishift addon apply prometheus --addon-env namespace=kube-system
+````
+
+To access it:
+
+````
+minishift openshift service prometheus -n <namespace>
+````
+
 # Install or enable
 You need to install the addon:
 
