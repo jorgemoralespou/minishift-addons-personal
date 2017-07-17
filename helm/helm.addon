@@ -1,0 +1,19 @@
+# Name: helm
+# Description: Installs helm
+
+docker run --rm -v /home/docker:/root:z -v /var/lib/minishift/openshift.local.config:/var/lib/minishift/openshift.local.config:z --net=host --env KUBECONFIG=/var/lib/minishift/openshift.local.config/master/admin.kubeconfig --env HELM_HOST=localhost:8443 lachlanevenson/k8s-helm:v2.5.0 init
+# Add permissions to view serviceaccounts
+oc adm policy add-cluster-role-to-user cluster-admin -z default -n kube-system
+# Expose helm
+oc expose svc/tiller-deploy --hostname=tiller.#{routing-suffix} -n kube-system
+#
+echo To use helm, provide the minishift host to your helm config
+echo
+echo e.g.
+echo   helm init --host #{ip}:8443 -c
+echo
+echo And remember to have repositories configured, else add them:
+echo
+echo e.g.
+echo   helm repo add stable https://kubernetes-charts.storage.googleapis.com
+echo   helm search
