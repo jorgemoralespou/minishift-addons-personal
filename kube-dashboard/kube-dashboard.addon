@@ -11,8 +11,7 @@ oc expose dc/dashboard --port=9090 -l app=kube-dashboard -n kube-dashboard
 oc expose svc/dashboard --hostname=dashboard.#{routing-suffix} -l app=kube-dashboard -n kube-dashboard
 oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:kube-dashboard:default
 oc deploy dashboard -n kube-dashboard
-#oc rollout latest dc/dashboard -n kube-dashboard
-oc deploy dashboard --follow -n kube-dashboard
+oc rollout status dc/dashboard -n kube-dashboard
 
 echo You have installed #{addon-name}
 echo To access the #{addon-name} go to http://dashboard.#{routing-suffix}
