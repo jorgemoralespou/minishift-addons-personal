@@ -3,25 +3,23 @@ An addon to install [OpenShift's Roadshow Cloud Native Labs](https://github.com/
 
 Verify you have installed these addons, by following the [general readme](../../Readme.adoc#download-and-use-community-add-ons).
 
-## Deploy cockpit
-To deploy cockpit
+## Deploy 
+To deploy:
 
 ```
-$ minishift addon apply cockpit
+$ minishift addon apply cloud-native labs
 ```
 
-## Use cockpit
-Find cockpit console at the following URL:
+## Use
+Find the guide at the following URL:
 
 ```
-$ minishift openshift service openshift-cockpit -n cockpit
+$ minishift openshift service guide -n workshop
 ```
 
-You will need to log in with same user and creadentials as to OpenShift
-
-## Delete cockpit
-To delete cockpit, just do:
+## Delete
+To delete the guide, just do:
 
 ```
-$ oc delete oauthclients/cockpit-oauth-client project/cockpit --as=system:admin
+$ oc delete project/workshop project/coolstore --as=system:admin
 ```
