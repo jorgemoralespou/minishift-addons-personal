@@ -7,19 +7,19 @@ Verify you have installed these addons, by following the [general readme](../../
 To deploy:
 
 ```
-$ minishift addon apply cloud-native labs
+$ minishift addon apply cloud-native-labs
 ```
 
 ## Use
 Find the guide at the following URL:
 
 ```
-$ minishift openshift service guide -n workshop
+$ minishift openshift service guides -n cloud-native-labs
 ```
 
 ## Delete
 To delete the guide, just do:
 
 ```
-$ oc delete project/workshop project/coolstore --as=system:admin
+$ oc delete project/cloud-native-labs project/coolstore --as=system:admin
 ```
