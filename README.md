@@ -1,3 +1,6 @@
+
+FOR THE SUPPORTED ADDONS, GO TO: https://github.com/minishift/minishift-addons
+
 # minishift-addons
 Incubator for addons to minishift
 
